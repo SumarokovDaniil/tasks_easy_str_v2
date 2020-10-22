@@ -1,51 +1,51 @@
-def ft_count_char_in_str(char, string):
-    count = 0
-    for i in string:
-        if i == char:
-            count += 1
-    return count
+def ft_count_char_in_str(d, s):
+    c = 0
+    for i in s:
+        if i == d:
+            c += 1
+    return c
 
 
-def ft_len(string):
-    count = 0
-    for _ in string:
-        count += 1
-    return count
+def ft_len(b):
+    c = 0
+    for _ in b:
+        c += 1
+    return c
 
 
-def ft_find_char(char, string):
-    if char not in string:
+def ft_find_char(d, b):
+    if d not in b:
         return False
-    for i in range(ft_len(string)):
-        if string[i] == char:
-            return i + 1
+    for z in range(ft_len(b)):
+        if b[z] == d:
+            return z + 1
 
 
-def ft_find_second_char(char, string):
-    cnt = 0
-    if ft_count_char_in_str(char, string) == 1:
+def ft_find_second_char(d, b):
+    x = 0
+    if ft_count_char_in_str(d, b) == 1:
         return -1
-    elif ft_count_char_in_str(char, string) == 0:
+    elif ft_count_char_in_str(d, b) == 0:
         return False
-    for i in range(ft_len(string)):
-        if string[i] == char:
-            cnt += 1
-            if cnt == 2:
-                return i
+    for z in range(ft_len(b)):
+        if b[z] == d:
+            x += 1
+            if x == 2:
+                return z
 
 
-def ft_slice_str(string, start, stop):
-    result_string = ''
-    for i in range(start, stop):
-        result_string += string[i]
-    return result_string
+def ft_slice_str(b, st, sp):
+    result = ''
+    for z in range(st, sp):
+        result += b[z]
+    return result
 
 
-def ft_reverse_between_char(char, string):
-    if ft_count_char_in_str(char, string) == 1:
+def ft_reverse_between_char(d, b):
+    if ft_count_char_in_str(d, b) == 1:
         return -1
-    elif ft_count_char_in_str(char, string) == 0:
+    elif ft_count_char_in_str(d, b) == 0:
         return -2
-    return ft_slice_str(string, 0, ft_find_char(char, string) - 1) + \
-        ft_slice_str(string, ft_find_second_char(char, string), ft_find_char(char, string)) + \
-        ft_slice_str(string, ft_find_second_char(char, string) + 1, ft_len(string))
+    return ft_slice_str(b, 0, ft_find_char(d, b) - 1) + \
+        ft_slice_str(b, ft_find_second_char(d, b), ft_find_char(d, b)) + \
+        ft_slice_str(b, ft_find_second_char(d, b) + 1, ft_len(b))

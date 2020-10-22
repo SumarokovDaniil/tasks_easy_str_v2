@@ -1,21 +1,34 @@
-def ft_slice_str(string, start, stop):
-    result_string = ''
-    for i in range(start, stop):
-        result_string += string[i]
-    return result_string
+def ft_len(a):
+    d = 0
+    for i in a:
+        d += 1
+    return (d)
 
 
-def ft_len(string):
-    count = 0
-    for _ in string:
-        count += 1
-    return count
+def ft_division_str(a):
+    if ft_len(a) % 2 == 0:
+        i = 0
+        s = ''
+        n = ''
+        q = ''
+        while i != ft_len(a) // 2:
+            s += a[i]
+            i += 1
+        while i < ft_len(a):
+            n += a[i]
+            i += 1
+        q = n + s
 
-
-def ft_division_str(string):
-    if ft_len(string) % 2 == 1:
-        return ft_slice_str(string, ft_len(string) // 2 + 1, ft_len(string)) \
-               + ft_slice_str(string, 0, ft_len(string) // 2 + 1)
-
-    return ft_slice_str(string, ft_len(string) // 2,
-                        ft_len(string)) + ft_slice_str(string, 0, ft_len(string) // 2)
+    else:
+        i = 0
+        s = ''
+        n = ''
+        q = ''
+        while i != (ft_len(a) + 1) // 2:
+            s += a[i]
+            i += 1
+        while i < ft_len(a):
+            n += a[i]
+            i += 1
+        q = n + s
+    return q

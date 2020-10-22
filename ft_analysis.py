@@ -31,14 +31,15 @@ def ft_n_even_place(string):
 def ft_analysis(string):
     print(string[2])
     print(string[-2])
-    print(ft_slice_str(string, 0, 4))
+    print(ft_slice_str(string, 0, 5))
+    print(ft_slice_str(string, 0, ft_len(string) - 2))
     print(ft_even_place(string))
     print(ft_n_even_place(string))
-    for i in range(ft_len(string), 0, -1):
-        print(string[i], end='')
-    for i in range(ft_len(string), 0, -2):
-        print(string[i], end='')
+    print(ft_slice_str(string, ft_len(string), 0))
+    i = 0
+    while i != ft_len(string):
+        if i % 2 == 0:
+            print(string[ft_len(string) - i - 1], end='')
+        i += 1
     print(ft_len(string))
 
-
-print(ft_analysis('123456789'))

@@ -2,7 +2,6 @@ def ft_len(string):
     count = 0
     for _ in string:
         count += 1
-
     return count
 
 
@@ -40,3 +39,6 @@ def ft_analysis(string):
     for i in range(ft_len(string), 0, -2):
         print(string[i], end='')
     print(ft_len(string))
+
+
+print(ft_analysis('123456789'))
